@@ -12,7 +12,7 @@ const server = http.Server(app)
 
 setupWebsocket(server)
 
-mongoose.connect('mongodb+srv://ziegler:ziegler@cluster0-voe4r.mongodb.net/week10?retryWrites=true&w=majority', { useNewUrlParser:true, useUnifiedTopology:true})
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser:true, useUnifiedTopology:true})
 
 app.use(cors())
 
